@@ -5,69 +5,58 @@
 ![CLI](https://img.shields.io/badge/CLI-Command%20Line-blue)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
-A simple command-line application built with **Node.js** that allows users to add, list, search, and delete contacts. This project demonstrates fundamental JavaScript logic, looping, condition handling, and basic data management using arrays.
+A simple command-line contact manager built with Node.js. It supports adding, listing, searching, and deleting contacts using terminal input.
 
 ---
 
-## 📌 Features
+## Features
 
-* Add a new contact (name and email)
-* List all saved contacts
-* Search for a contact (feature placeholder)
-* Delete a contact (feature placeholder)
-* Exit the system
-
----
-
-## 🧠 How It Works
-
-The program displays a menu of operations and waits for the user to choose an option. Based on the input, the corresponding function is executed.
-
-The contact list is stored in an array of objects:
-
-```js
-{
-  name: "John",
-  email: "john@example.com"
-}
-```
-
-You interact with the system via the terminal using **prompt-sync**.
+* Add contacts (name and email)
+* List all contacts
+* Search contacts *(placeholder)*
+* Delete contacts *(placeholder)*
+* Exit the program
 
 ---
 
-## ▶️ Running the Project
-
-### Requirements
-
-* Node.js installed
-
-### Install dependencies
+## Usage
 
 ```bash
 npm install prompt-sync
-```
-
-### Run
-
-```bash
 node script.js
 ```
 
 ---
 
-## 📂 Project Structure
+# 🇧🇷 Versão em Português
 
-```
-project-folder/
-│── script.js
-│── package.json
-└── README.md
-```
+![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js\&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
+![CLI](https://img.shields.io/badge/CLI-Linha%20de%20Comando-blue)
+![Status](https://img.shields.io/badge/Status-Ativo-success)
+
+Um gerenciador de contatos simples feito em Node.js. Permite adicionar, listar, buscar e remover contatos pelo terminal.
 
 ---
 
-# 🇧🇷 Versão em Português
+## Funcionalidades
+
+* Adicionar contatos (nome e email)
+* Listar contatos
+* Buscar contatos *(placeholder)*
+* Remover contatos *(placeholder)*
+* Encerrar o programa
+
+---
+
+## Como usar
+
+```bash
+npm install prompt-sync
+node script.js
+```
+
+---
 
 ![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js\&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
@@ -135,3 +124,7 @@ pasta-do-projeto/
 │── package.json
 └── README.md
 ```
+
+---
+
+Se quiser, posso personalizar ainda mais este README, adicionar badges, exemplos, imagens ou uma explicação mais aprofundada.
