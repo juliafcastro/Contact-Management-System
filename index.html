@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contact Manager</title>
+  </head>
+  <body>
+    <header>
+      <h1>Meus Contatos</h1>
+      <p>Gerenciador de contatos simples e eficiente.</p>
+    </header>
+
+    <section>
+      <!-- left content -->
+      <div class="div-left">
+        <div class="add">
+          <label for="search"><h3>Pesquisar Contato</h3></label>
+          <input type="text" placeholder="Nome ou Email do contato" />
+        </div>
+
+        <!-- inputs -->
+        <form>
+          <h3>Adicionar Novo Contato</h3>
+          <label for="name">Nome:</label>
+          <input
+            type="text"
+            autocomplete="name"
+            id="name"
+            name="name"
+            placeholder="Nome do contato"
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            autocomplete="email"
+            id="email"
+            name="email"
+            placeholder="Email do contato"
+          />
+
+          <!-- button -->
+          <button class="add-contact" id="add-contact">
+            Adicionar Contato
+          </button>
+        </form>
+      </div>
+
+      <!-- right content -->
+      <div class="div-right">
+        <h3 style="margin-bottom: 1rem;">Seus Contatos</h3>
+        <!-- card contatos -->
+        
+          <div class="card-contact" id="card-contact">
+            <div class="name-email">
+              <h4>Leonardo Dockhorn</h4>
+              <p>leodockhorn@email.com</p>
+            </div>
+
+            <!-- buttons -->
+            <div class="btn">
+              <button class="edit">Editar</button>
+              <button class="delete">Apagar</button>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

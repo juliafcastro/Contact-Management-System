@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background: linear-gradient(to left, #9859cc, #7e65db, #669ae7);
+  height: 80px;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  background-color: #f8f9fb;
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Elementos da direita */
+
+.div-right {
+  background-color: white;
+  box-shadow: 1px 1px 4px #888;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.div-right  p {
+    color: rgb(100, 100, 100);
+}
+
+.card-contact {
+  background: white;
+  padding: 8px;
+  border-left: #7e65db solid 4px;
+  border-radius: 5px 4px 5px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 1px 1px 4px #888;
+}
+
+.name-email {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1px 1px 4px #888;
+  cursor: pointer;
+}
+
+/* Elementos da Esquerda */
+
+.add {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  box-shadow: 1px 1px 4px #888;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.div-left {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  min-width: 20rem;
+}
+
+input {
+  border: none;
+  box-shadow: 1px 1px 4px #888;
+  padding: 6px;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+input:focus { 
+    outline: none; 
+    border: none; 
+}
+
+form {
+  background-color: white;
+  box-shadow: 1px 1px 4px #888;
+  border-radius: 4px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit {
+    background-color: #65d48f;
+    color: white;
+    font-weight: bold;
+}
+
+.delete {
+    background-color: #d46581;
+    color: white;
+    font-weight: bold;
+}
+
+.add-contact {
+     background-color: #7e65db;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    padding: 10px;
+}
+
+form label {
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}

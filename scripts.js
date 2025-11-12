@@ -1,71 +1,124 @@
-const prompt = require("prompt-sync")();
+const inputName = document.getElementById("name");
+const inputEmail = document.getElementById("email");
+const buttonSubmit = document.getElementById("add-contact");
+const cardContact = document.getElementById("card-contact");
 
-function printInfo() {
-  console.log("Contact Management System");
-  console.log("-------------");
-  console.log("1. Add a Contact");
-  console.log("2. Delete a contact");
-  console.log("3. View contacts");
-  console.log("4. Search Contacts");
-  console.log("5. Exit");
-}
 
-printInfo();
 
-function addContact() {
-  const name = prompt("name: ");
-  const email = prompt("Email: ");
-  const contact = {
-    name: name,
-    email: email,
-  };
-  contacts.push(contact);
-}
+buttonSubmit.addEventListener("click", (e) => {
+  e.preventDefault();
 
-function deleteContact() {
-  for(let i = 0; i < contacts.length; i++) {
+  const inputNameValue = inputName.value.trim();
+  const inputEmailValue = inputEmail.value.trim();
 
-  }
-}
-
-function searchContact() {}
-
-function listContacts(contacts) {
-  for (let contact of contacts) {
-    console.log("#############");
-    console.log("Name: " + contact.name);
-    console.log("Email: " + contact.email);
-  }
-}
+  contacts.push({
+    name: inputNameValue,
+    email: inputEmailValue,
+  });
+  console.log(contacts);
+  renderContacts();
+});
 
 const contacts = [];
-let keepGoing = true;
-while (keepGoing) {
-  const number = prompt("Enter an operation (1-5): ");
 
-  switch (number) {
-    case "1":
-      addContact();
-      break;
+function renderContacts() {
+  cardContact.innerHTML = '';
 
-    case "2":
-      deleteContact();
-      break;
+  contacts.forEach((contact) => {
+    const contactDiv = document.createElement("div");
+  contactDiv.classList.add("contact");
 
-    case "3":
-      listContacts(contacts);
-      break;
+  const nameEmailDiv = document.createElement("div");
+  nameEmailDiv.classList.add("name-email");
+  nameEmailDiv.innerHTML = `<h4>${contact.name}</h4><p>${contact.email}</p>`;
 
-    case "4":
-      searchContact();
-      break;
+  const btnDiv = document.createElement("div");
+  btnDiv.classList.add("btn");
 
-    case "5":
-      keepGoing = false;
-      break;
+  const editBtn = document.createElement("button");
+  editBtn.classList.add("edit");
+  editBtn.textContent = "Editar";
 
-    default:
-      console.log("Unknown.");
-      break;
-  }
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete");
+  deleteBtn.textContent = "Apagar";
+
+  btnDiv.append(editBtn, deleteBtn);
+  contactDiv.append(nameEmailDiv, btnDiv);
+
+  cardContact.appendChild(contactDiv);
+  })
+
+  
+  
 }
+
+// function printInfo() {
+//   console.log("Contact Management System");
+//   console.log("-------------");
+//   console.log("1. Add a Contact");
+//   console.log("2. Delete a contact");
+//   console.log("3. View contacts");
+//   console.log("4. Search Contacts");
+//   console.log("5. Exit");
+// }
+
+// printInfo();
+
+// function addContact() {
+//   const name = prompt("name: ") ;
+//   const email = prompt("Email: ");
+//   const contact = {
+//     name: name,
+//     email: email,
+//   };
+//   contacts.push(contact);
+// }
+
+// function deleteContact() {
+//   for(let i = 0; i < contacts.length; i++) {
+
+//   }
+// }
+
+// function searchContact() {}
+
+// function listContacts(contacts) {
+//   for (let contact of contacts) {
+//     console.log("#############");
+//     console.log("Name: " + contact.name);
+//     console.log("Email: " + contact.email);
+//   }
+// }
+
+// let contacts = [];
+// let keepGoing = true;
+// while (keepGoing) {
+//   const number = prompt;
+
+//   switch (number) {
+//     case "1":
+//       addContact();
+//       break;
+
+//     case "2":
+//       deleteContact();
+//       break;
+
+//     case "3":
+//       listContacts(contacts);
+//       break;
+
+//     case "4":
+//       searchContact();
+//       break;
+
+//     case "5":
+//       keepGoing = false;
+//       break;
+
+//     default:
+//       console.log("Unknown.");
+//       break;
+//   }
+// }
