@@ -1,130 +1,99 @@
-# Contact Management System
+# 📇 My Contacts (Contact Manager)
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
-![CLI](https://img.shields.io/badge/CLI-Command%20Line-blue)
-![Status](https://img.shields.io/badge/Status-Active-success)
+![Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Badge](https://img.shields.io/badge/storage-localStorage-red?style=for-the-badge)
+![Badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
-A simple command-line contact manager built with Node.js. It supports adding, listing, searching, and deleting contacts using terminal input.
+![Screenshot dektop](img/desktop.png) ![Screenshot mobile](img/mobile.png)
 
----
+> A simple (CRUD) contact manager built with HTML, CSS, and vanilla JavaScript, featuring data persistence using `localStorage`.
 
-## Features
+This project is a complete front-end application that allows a user to manage a contact list. It was built without frameworks, focusing on direct DOM manipulation and local storage.
 
-* Add contacts (name and email)
-* List all contacts
-* Search contacts *(placeholder)*
-* Delete contacts *(placeholder)*
-* Exit the program
+## ✨ Features
 
----
+* **Full CRUD:** Add, Read (list), Update (edit), and Delete contacts.
+* **Real-time Search:** Instantly filter the contact list by name or email.
+* **Data Persistence:** Contacts are saved in the browser's `localStorage` and persist after a page reload.
+* **Responsive Design:** The layout adapts from a two-column desktop view to a single-column mobile view using Media Queries.
 
-## Usage
+## 🛠 Tech Stack
+
+* **HTML5:** Semantic structure for the application.
+* **CSS3:** Styling with Flexbox and Media Queries for responsiveness.
+* **JavaScript (Vanilla):** Used for all application logic:
+    * DOM manipulation (creating, updating, and removing elements).
+    * Event handling (clicks, inputs).
+    * CRUD logic on the contacts array.
+* **`localStorage` API:** To save and load contact data.
+
+## 🏃 Getting Started
+
+This is a pure front-end project and requires no installation.
 
 ```bash
-npm install prompt-sync
-node script.js
+# 1. Clone this repository
+$ git clone [REPOSITORY_URL]
+
+# 2. Navigate to the project folder
+$ cd [PROJECT_NAME]
+
+# 3. Open the 'index.html' file in your browser
 ```
 
----
+## 📄 License
+
+This project is licensed under the MIT License.
+
+
 
 # 🇧🇷 Versão em Português
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
-![CLI](https://img.shields.io/badge/CLI-Linha%20de%20Comando-blue)
-![Status](https://img.shields.io/badge/Status-Ativo-success)
+# 📇 Meus Contatos (Contact Manager)
 
-Um gerenciador de contatos simples feito em Node.js. Permite adicionar, listar, buscar e remover contatos pelo terminal.
+![Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Badge](https://img.shields.io/badge/storage-localStorage-red?style=for-the-badge)
+![Badge](https://img.shields.io/badge/license-MIT-blue.svg)
 
----
+> Um gerenciador de contatos simples (CRUD) construído com HTML, CSS e JavaScript puro, com persistência de dados no `localStorage`.
 
-## Funcionalidades
+Este projeto é um aplicativo front-end completo que permite ao usuário gerenciar uma lista de contatos. Ele foi construído sem frameworks, focando na manipulação direta do DOM e no armazenamento local.
 
-* Adicionar contatos (nome e email)
-* Listar contatos
-* Buscar contatos *(placeholder)*
-* Remover contatos *(placeholder)*
-* Encerrar o programa
+## ✨ Funcionalidades
 
----
+* **CRUD Completo:** Adicionar, Ler (listar), Atualizar (editar) e Excluir contatos.
+* **Pesquisa em Tempo Real:** Filtre a lista de contatos instantaneamente por nome ou email.
+* **Persistência de Dados:** Os contatos são salvos no `localStorage` do navegador e não desaparecem ao recarregar a página.
+* **Design Responsivo:** O layout se adapta a telas de desktop (duas colunas) e dispositivos móveis (coluna única) usando Media Queries.
 
-## Como usar
+## 🛠 Tecnologias Utilizadas
 
-```bash
-npm install prompt-sync
-node script.js
-```
+* **HTML5:** Estrutura semântica da aplicação.
+* **CSS3:** Estilização com Flexbox e Media Queries para responsividade.
+* **JavaScript (Vanilla):** Usado para toda a lógica do aplicativo:
+    * Manipulação do DOM (criar, atualizar e remover elementos).
+    * Gerenciamento de eventos (clicks, inputs).
+    * Lógica de CRUD no array de contatos.
+* **`localStorage` API:** Para salvar e carregar os dados dos contatos.
 
----
+## 🏃 Como Rodar o Projeto
 
-![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js\&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript\&logoColor=black)
-![CLI](https://img.shields.io/badge/CLI-Linha%20de%20Comando-blue)
-![Status](https://img.shields.io/badge/Status-Ativo-success)
-
-# Sistema de Gerenciamento de Contatos
-
-Aplicação simples de linha de comando construída em **Node.js** que permite adicionar, listar, buscar e deletar contatos. O projeto demonstra lógica básica em JavaScript, loops, condicionais e gerenciamento de dados usando arrays.
-
----
-
-## 📌 Funcionalidades
-
-* Adicionar um novo contato (nome e email)
-* Listar todos os contatos salvos
-* Buscar um contato (placeholder)
-* Remover um contato (placeholder)
-* Encerrar o sistema
-
----
-
-## 🧠 Como Funciona
-
-O programa exibe um menu de operações e aguarda o usuário escolher uma opção. A ação correspondente é então executada.
-
-Os contatos são armazenados em um array de objetos:
-
-```js
-{
-  name: "Maria",
-  email: "maria@example.com"
-}
-```
-
-A interação com o sistema é feita no terminal usando **prompt-sync**.
-
----
-
-## ▶️ Executando o Projeto
-
-### Requisitos
-
-* Node.js instalado
-
-### Instalar dependência
+Este é um projeto puramente front-end e não requer instalação.
 
 ```bash
-npm install prompt-sync
+# 1. Clone este repositório
+$ git clone [URL_DO_REPOSITORIO]
+
+# 2. Acesse a pasta do projeto
+$ cd [NOME_DO_PROJETO]
+
+# 3. Abra o arquivo 'index.html' no seu navegador
 ```
 
-### Rodar
+## 📄 Licença
 
-```bash
-node script.js
-```
-
----
-
-## 📂 Estrutura do Projeto
-
-```
-pasta-do-projeto/
-│── script.js
-│── package.json
-└── README.md
-```
-
----
-
-Se quiser, posso personalizar ainda mais este README, adicionar badges, exemplos, imagens ou uma explicação mais aprofundada.
+Este projeto está sob a licença MIT.
