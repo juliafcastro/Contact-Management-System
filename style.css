@@ -18,10 +18,10 @@ header {
 
 section {
   background-color: #f8f9fb;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
 }
@@ -33,6 +33,14 @@ section {
   box-shadow: 1px 1px 4px #888;
   border-radius: 4px;
   padding: 1rem;
+  min-width: 30rem;
+  display: flex; 
+  flex-direction: column;
+  max-height: 70vh;
+}
+
+#contacts-list {
+  overflow-y: auto;
 }
 
 .div-right  p {
@@ -45,11 +53,11 @@ section {
   border-left: #7e65db solid 4px;
   border-radius: 5px 4px 5px 4px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   box-shadow: 1px 1px 4px #888;
+  margin-bottom: 0.5rem;
 }
 
 .name-email {
@@ -63,8 +71,12 @@ button {
   border: none;
   box-shadow: 1px 1px 4px #888;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
+button:hover {
+  transform: translateY(3px);
+}
 /* Elementos da Esquerda */
 
 .add {
@@ -81,7 +93,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  min-width: 20rem;
+  min-width: 30rem;
 }
 
 input {
@@ -111,6 +123,7 @@ form {
     background-color: #65d48f;
     color: white;
     font-weight: bold;
+    margin-right: 0.3rem;
 }
 
 .delete {
@@ -130,4 +143,61 @@ form {
 form label {
     font-weight: bold;
     color: rgb(100, 100, 100);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to left, #9859cc, #7e65db, #669ae7);
+  color: white;
+  height: 20px;
+  font-size: small;
+}
+
+@media (max-width: 800px) {
+  
+  * {
+    font-size: medium;
+  }
+  section {
+    flex-direction: column;
+    height: auto; 
+    min-height: calc(100vh - 100px);
+    padding: 1rem;
+    justify-content: flex-start; 
+  }
+
+
+  .div-left,
+  .div-right {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .div-right {
+    max-height: 20rem; 
+  }
+
+  #contacts-list {
+    overflow-y: auto; 
+  }
+
+  .card-contact {
+    padding: 1;
+    font-size: small;
+  }
+
+  .edit,
+  .delete {
+    width: 50px;
+    padding-bottom: 0.2;
+    padding-top: 0.2;
+    font-size: small;
+    margin-top: 5px;
+  }
+
+  button:hover {
+    transform: translateY(0);
+  }
 }

@@ -1,9 +1,20 @@
 const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
 const buttonSubmit = document.getElementById("add-contact");
-const cardContact = document.getElementById("card-contact");
+const cardContact = document.getElementById("contacts-list");
+const search = document.getElementById("search");
 
+search.addEventListener("input", (e) => {
+  e.preventDefault();
+  const filteredContacts = contacts.filter((contact) => {
+    return (
+      contact.name.includes(search.value) ||
+      contact.email.includes(search.value)
+    );
+  });
 
+  renderContacts(filteredContacts);
+});
 
 buttonSubmit.addEventListener("click", (e) => {
   e.preventDefault();
@@ -15,110 +26,80 @@ buttonSubmit.addEventListener("click", (e) => {
     name: inputNameValue,
     email: inputEmailValue,
   });
-  console.log(contacts);
   renderContacts();
+  saveContacts();
 });
 
-const contacts = [];
+const contacts = JSON.parse(localStorage.getItem("meus_contatos")) || [];
 
-function renderContacts() {
-  cardContact.innerHTML = '';
-
-  contacts.forEach((contact) => {
-    const contactDiv = document.createElement("div");
-  contactDiv.classList.add("contact");
-
-  const nameEmailDiv = document.createElement("div");
-  nameEmailDiv.classList.add("name-email");
-  nameEmailDiv.innerHTML = `<h4>${contact.name}</h4><p>${contact.email}</p>`;
-
-  const btnDiv = document.createElement("div");
-  btnDiv.classList.add("btn");
-
-  const editBtn = document.createElement("button");
-  editBtn.classList.add("edit");
-  editBtn.textContent = "Editar";
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete");
-  deleteBtn.textContent = "Apagar";
-
-  btnDiv.append(editBtn, deleteBtn);
-  contactDiv.append(nameEmailDiv, btnDiv);
-
-  cardContact.appendChild(contactDiv);
-  })
-
-  
-  
+function saveContacts() {
+  localStorage.setItem("meus_contatos", JSON.stringify(contacts));
 }
 
-// function printInfo() {
-//   console.log("Contact Management System");
-//   console.log("-------------");
-//   console.log("1. Add a Contact");
-//   console.log("2. Delete a contact");
-//   console.log("3. View contacts");
-//   console.log("4. Search Contacts");
-//   console.log("5. Exit");
-// }
+function renderContacts(list = contacts) {
+  if (list.length === 0) {
+    cardContact.innerHTML = "<p>Seus contatos aparecerão aqui!</p>";
+  } else {
+    cardContact.innerHTML = "";
 
-// printInfo();
+    list.forEach((contact, index) => {
+      const contactDiv = document.createElement("div");
+      contactDiv.classList.add("card-contact");
 
-// function addContact() {
-//   const name = prompt("name: ") ;
-//   const email = prompt("Email: ");
-//   const contact = {
-//     name: name,
-//     email: email,
-//   };
-//   contacts.push(contact);
-// }
+      const nameEmailDiv = document.createElement("div");
+      nameEmailDiv.classList.add("name-email");
+      nameEmailDiv.innerHTML = `<h4>${contact.name}</h4><p>${contact.email}</p>`;
 
-// function deleteContact() {
-//   for(let i = 0; i < contacts.length; i++) {
+      const btnDiv = document.createElement("div");
+      btnDiv.classList.add("btn");
 
-//   }
-// }
+      const editBtn = document.createElement("button");
+      editBtn.classList.add("edit");
+      editBtn.textContent = "Editar";
 
-// function searchContact() {}
+      editBtn.addEventListener("click", (e) => {
+        if (editBtn.textContent === "Editar") {
+          const nameInput = document.createElement("input");
+          nameInput.value = contact.name;
+          const emailInput = document.createElement("input");
+          emailInput.value = contact.email;
 
-// function listContacts(contacts) {
-//   for (let contact of contacts) {
-//     console.log("#############");
-//     console.log("Name: " + contact.name);
-//     console.log("Email: " + contact.email);
-//   }
-// }
+          nameEmailDiv.innerHTML = "";
+          nameEmailDiv.append(nameInput, emailInput);
 
-// let contacts = [];
-// let keepGoing = true;
-// while (keepGoing) {
-//   const number = prompt;
+          editBtn.textContent = "Salvar";
+        } else {
+          const newName =
+            nameEmailDiv.querySelector("input:nth-child(1)").value;
+          const newEmail =
+            nameEmailDiv.querySelector("input:nth-child(2)").value;
 
-//   switch (number) {
-//     case "1":
-//       addContact();
-//       break;
+          contacts[index].name = newName;
+          contacts[index].email = newEmail;
 
-//     case "2":
-//       deleteContact();
-//       break;
+          renderContacts();
+          saveContacts()
+        }
+      });
 
-//     case "3":
-//       listContacts(contacts);
-//       break;
+      const deleteBtn = document.createElement("button");
+      deleteBtn.classList.add("delete");
+      deleteBtn.textContent = "Apagar";
 
-//     case "4":
-//       searchContact();
-//       break;
+      deleteBtn.addEventListener("click", (e) => {
+        contacts.splice(index, 1);
 
-//     case "5":
-//       keepGoing = false;
-//       break;
+        renderContacts();
+        saveContacts()
+      });
 
-//     default:
-//       console.log("Unknown.");
-//       break;
-//   }
-// }
+      btnDiv.append(editBtn, deleteBtn);
+      contactDiv.append(nameEmailDiv, btnDiv);
+
+      cardContact.appendChild(contactDiv);
+    });
+  }
+}
+
+
+renderContacts();
